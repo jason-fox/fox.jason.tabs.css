@@ -5,7 +5,7 @@ that you upgrade to the latest version.
 
 ## Installing DITA-OT
 
-<a href="https://www.dita-ot.org"><img src="https://www.dita-ot.org/images/dita-ot-logo.svg" align="right" height="55"></a>
+<a href="https://www.dita-ot.org"><img src="https://www.dita-ot.org/images/dita-ot-logo.svg" align="right" width="55" height="55"></a>
 
 The DITA-OT CSS Tabs Plug-in is a file reader for the DITA Open Toolkit.
 
@@ -29,7 +29,7 @@ rm dita-ot-3.6.1.zip
 
 -   Run the plug-in installation commands:
 
-```console
+```bash
 dita install https://github.com/jason-fox/fox.jason.extend.css/archive/master.zip
 dita install https://github.com/jason-fox/fox.jason.tabs.css/archive/master.zip
 ```
