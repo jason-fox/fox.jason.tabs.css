@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="basic-usage">
+  <title>Basic usage</title>
+  <body outputclass="language-markup">
+    <p>Lorem Ipsum</p>
+    <bodydiv outputclass="tabs medium">
+      <section id="usage-with-webpack">
+        <title>Webpack</title>
+        <p>
+          If you want to use Prism with a bundler, install Prism with <codeph>npm</codeph>:
+        </p>
+        <codeblock>$ npm install prismjs</codeblock>
+        <p>
+          You can then
+          <codeph outputclass="language-js">import</codeph>
+          into your bundle:
+        </p>
+        <codeblock outputclass="language-js">import Prism from 'prismjs';</codeblock>
+        <p>
+          To make it easy to configure your Prism instance with only the languages and plugins you need, use the babel plugin,
+          <xref format="html" scope="external" href="https://github.com/mAAdhaTTah/babel-plugin-prismjs">babel-plugin-prismjs</xref>
+          . This will allow you to load
+    the minimum number of languages and plugins to satisfy your needs.
+    See that plugin's documentation for configuration details.
+        </p>
+      </section>
+      <section id="usage-with-node">
+        <title>Node</title>
+        <p>
+          If you want to use Prism on the server or through the command line, Prism can be used with Node.js as well.
+  This might be useful if you're trying to generate static HTML pages with highlighted code for environments that don't support browser-side JS, like
+          <xref format="html" scope="external" href="https://www.ampproject.org/">AMP pages</xref>
+          .
+        </p>
+        <p>Example:</p>
+        <codeblock outputclass="language-js">var Prism = require('prismjs');
+
+// The code snippet you want to highlight, as a string
+var code = "var data = 1;";
+
+// Returns a highlighted HTML string
+var html = Prism.highlight(code, Prism.languages.javascript, 'javascript');</codeblock>
+        <p>
+          Requiring <codeph>prismjs</codeph> will load the default languages: <codeph>markup</codeph>, 
+          <codeph>css</codeph>, <codeph>clike</codeph> and <codeph>javascript</codeph>
+          . You can load more languages with the
+          <codeph outputclass="language-javascript">loadLanguages()</codeph>
+          utility, which will automatically handle any required dependencies.
+        </p>
+        <p>Example:</p>
+        <codeblock outputclass="language-js">var Prism = require('prismjs');
+var loadLanguages = require('prismjs/components/');
+loadLanguages(['haml']);
+
+// The code snippet you want to highlight, as a string
+var code = "= ['hi', 'there', 'reader!'].join \" \"";
+
+// Returns a highlighted HTML string
+var html = Prism.highlight(code, Prism.languages.haml, 'haml');</codeblock>
+        <p>
+          <b>Note</b>: Do <i>not</i> use
+          <codeph outputclass="language-javascript">loadLanguages()</codeph>
+          with Webpack or another bundler, as this will cause Webpack to include all languages and plugins. Use the babel plugin described above.
+        </p>
+      </section>
+    </bodydiv>
+  </body>
+</topic>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><!--ant--><!--
+	This file is part of the DITA-OT CSS Tabs Plug-in project.
+	See the accompanying LICENSE file for applicable licenses.
+-->
+<project name="fox.jason.tabs.css">
+
+	<target name="tabs.css.copy">
+		<loadfile property="tabs.css" srcFile="${dita.plugin.fox.jason.tabs.css.dir}/resource/tabs.css"/>
+		<echo append="true" message="${line.separator}${tabs.css}" file="${extend.css.file}"/>
+	</target>
+</project>

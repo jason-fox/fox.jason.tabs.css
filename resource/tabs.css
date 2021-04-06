@@ -1,0 +1,64 @@
+.tabs {
+  position: relative;
+  height: 400px;
+  max-height: 400px;
+  display: block;
+  margin: 1em auto 0;
+  width: 95%;
+}
+
+.tabs.small {
+  height: 200px;
+  max-height: 200px;
+}
+
+.tabs.medium {
+  height: 600px;
+  max-height: 600px;
+}
+
+.tabs.large {
+  height: 1000px;
+  max-height: 1000px;
+}
+
+
+
+
+.tab {
+  float: left;
+}
+.tab label {
+  cursor: pointer;
+  background: #c69;
+  font-size: 1.2em;
+  border-radius: 5px 5px 0 0;
+  padding: 0.5em 1em;
+}
+.tab [type=radio] {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+.tab [type=radio]:focus + label {
+  outline: 2px dotted #000;
+}
+.tab [type=radio]:checked ~ label {
+  background: #c99;
+}
+.tab [type=radio]:checked ~ label ~ .section {
+  z-index: 1;
+}
+
+.tab .section {
+  background: white;
+  border: 1px solid #c69;
+  border-radius: 0 5px 5px;
+  padding: 0.5em 2em 0.5em 2em;
+  position: absolute;
+  width: 90%;
+  top: 2em;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: scroll;
+}
