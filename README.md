@@ -5,7 +5,6 @@
 [![CI](https://github.com/jason-fox/fox.jason.tabs.css/workflows/CI/badge.svg)](https://github.com/jason-fox/fox.jason.tabs.css/actions?query=workflow%3ACI)
 [![Coverage Status](https://coveralls.io/repos/github/jason-fox/fox.jason.tabs.css/badge.svg?branch=master)](https://coveralls.io/github/jason-fox/fox.jason.tabs.css?branch=master)
 [![Documentation Status](https://readthedocs.org/projects/tabsdita-ot/badge/?version=latest)](https://tabsdita-ot.readthedocs.io/en/latest/?badge=latest)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=fox.jason.tabs.css&metric=alert_status)](https://sonarcloud.io/dashboard?id=fox.jason.tabs.css)
 
 This is a [DITA-OT Plug-in](https://www.dita-ot.org/plugins) used to create CSS-only tabbed dialog within DITA HTML output.
 
