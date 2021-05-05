@@ -1,0 +1,67 @@
+<article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Basic usage</h1>
+  <div class="body language-markup">
+    <p class="p">Lorem Ipsum</p>
+    <div xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="bodydiv tabs medium">
+      <div class="tab"><input type="radio" name="tabgroup_basic-usage__bodydiv__1" id="tab_basic-usage__usage-with-webpack" checked=""><label for="tab_basic-usage__usage-with-webpack">Webpack</label><div class="section" id="basic-usage__usage-with-webpack">
+        
+        <p class="p">
+          If you want to use Prism with a bundler, install Prism with <code class="ph codeph language-markup">npm</code>:
+        </p>
+        <pre class="pre codeblock language-markup"><code>$ npm install prismjs</code></pre>
+        <p class="p">
+          You can then
+          <code class="ph codeph language-js"><span class="ph token keyword">import</span></code>
+          into your bundle:
+        </p>
+        <pre class="pre codeblock language-js"><code><span class="ph token keyword">import</span> Prism <span class="ph token keyword">from</span> <span class="ph token string">'prismjs'</span><span class="ph token punctuation">;</span></code></pre>
+        <p class="p">
+          To make it easy to configure your Prism instance with only the languages and plugins you need, use the babel plugin,
+          <a class="xref" href="https://github.com/mAAdhaTTah/babel-plugin-prismjs" target="_blank" rel="external noopener">babel-plugin-prismjs</a>
+          . This will allow you to load
+    the minimum number of languages and plugins to satisfy your needs.
+    See that plugin's documentation for configuration details.
+        </p>
+      </div></div>
+      <div class="tab"><input type="radio" name="tabgroup_basic-usage__bodydiv__1" id="tab_basic-usage__usage-with-node"><label for="tab_basic-usage__usage-with-node">Node</label><div class="section" id="basic-usage__usage-with-node">
+        
+        <p class="p">
+          If you want to use Prism on the server or through the command line, Prism can be used with Node.js as well.
+  This might be useful if you're trying to generate static HTML pages with highlighted code for environments that don't support browser-side JS, like
+          <a class="xref" href="https://www.ampproject.org/" target="_blank" rel="external noopener">AMP pages</a>
+          .
+        </p>
+        <p class="p">Example:</p>
+        <pre class="pre codeblock language-js"><code><span class="ph token keyword">var</span> Prism <span class="ph token operator">=</span> <span class="ph token function">require</span><span class="ph token punctuation">(</span><span class="ph token string">'prismjs'</span><span class="ph token punctuation">)</span><span class="ph token punctuation">;</span>
+
+<span class="ph token comment">// The code snippet you want to highlight, as a string</span>
+<span class="ph token keyword">var</span> code <span class="ph token operator">=</span> <span class="ph token string">"var data = 1;"</span><span class="ph token punctuation">;</span>
+
+<span class="ph token comment">// Returns a highlighted HTML string</span>
+<span class="ph token keyword">var</span> html <span class="ph token operator">=</span> Prism<span class="ph token punctuation">.</span><span class="ph token function">highlight</span><span class="ph token punctuation">(</span>code<span class="ph token punctuation">,</span> Prism<span class="ph token punctuation">.</span>languages<span class="ph token punctuation">.</span>javascript<span class="ph token punctuation">,</span> <span class="ph token string">'javascript'</span><span class="ph token punctuation">)</span><span class="ph token punctuation">;</span></code></pre>
+        <p class="p">
+          Requiring <code class="ph codeph language-markup">prismjs</code> will load the default languages: <code class="ph codeph language-markup">markup</code>, 
+          <code class="ph codeph language-markup">css</code>, <code class="ph codeph language-markup">clike</code> and <code class="ph codeph language-markup">javascript</code>
+          . You can load more languages with the
+          <code class="ph codeph language-javascript"><span class="ph token function">loadLanguages</span><span class="ph token punctuation">(</span><span class="ph token punctuation">)</span></code>
+          utility, which will automatically handle any required dependencies.
+        </p>
+        <p class="p">Example:</p>
+        <pre class="pre codeblock language-js"><code><span class="ph token keyword">var</span> Prism <span class="ph token operator">=</span> <span class="ph token function">require</span><span class="ph token punctuation">(</span><span class="ph token string">'prismjs'</span><span class="ph token punctuation">)</span><span class="ph token punctuation">;</span>
+<span class="ph token keyword">var</span> loadLanguages <span class="ph token operator">=</span> <span class="ph token function">require</span><span class="ph token punctuation">(</span><span class="ph token string">'prismjs/components/'</span><span class="ph token punctuation">)</span><span class="ph token punctuation">;</span>
+<span class="ph token function">loadLanguages</span><span class="ph token punctuation">(</span><span class="ph token punctuation">[</span><span class="ph token string">'haml'</span><span class="ph token punctuation">]</span><span class="ph token punctuation">)</span><span class="ph token punctuation">;</span>
+
+<span class="ph token comment">// The code snippet you want to highlight, as a string</span>
+<span class="ph token keyword">var</span> code <span class="ph token operator">=</span> <span class="ph token string">"= ['hi', 'there', 'reader!'].join \" \""</span><span class="ph token punctuation">;</span>
+
+<span class="ph token comment">// Returns a highlighted HTML string</span>
+<span class="ph token keyword">var</span> html <span class="ph token operator">=</span> Prism<span class="ph token punctuation">.</span><span class="ph token function">highlight</span><span class="ph token punctuation">(</span>code<span class="ph token punctuation">,</span> Prism<span class="ph token punctuation">.</span>languages<span class="ph token punctuation">.</span>haml<span class="ph token punctuation">,</span> <span class="ph token string">'haml'</span><span class="ph token punctuation">)</span><span class="ph token punctuation">;</span></code></pre>
+        <p class="p">
+          <strong class="ph b">Note</strong>: Do <em class="ph i">not</em> use
+          <code class="ph codeph language-javascript"><span class="ph token function">loadLanguages</span><span class="ph token punctuation">(</span><span class="ph token punctuation">)</span></code>
+          with Webpack or another bundler, as this will cause Webpack to include all languages and plugins. Use the babel plugin described above.
+        </p>
+      </div></div>
+    </div>
+  </div>
+</article>
