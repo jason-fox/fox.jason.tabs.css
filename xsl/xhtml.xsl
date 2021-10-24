@@ -3,7 +3,13 @@
 	This file is part of the DITA-OT CSS Tabs Plug-in project.
 	See the accompanying LICENSE file for applicable licenses.
 -->
-<xsl:stylesheet version="2.0" xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet
+  version="2.0"
+  xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
 	<xsl:template match="*[contains(@class,' topic/bodydiv ') and contains(@outputclass, 'tabs')]">
 		<div class="tabs">
 			<xsl:call-template name="commonattributes"/>
@@ -40,7 +46,9 @@
         <xsl:call-template name="gen-toc-id"/>
         <xsl:call-template name="setidaname"/>
         <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]" mode="out-of-line"/>
-        <xsl:apply-templates select="*[not(contains(@class, ' topic/title '))] | text() | comment() | processing-instruction()"/>
+        <xsl:apply-templates
+          select="*[not(contains(@class, ' topic/title '))] | text() | comment() | processing-instruction()"
+        />
         <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-endprop ')]" mode="out-of-line"/>
       </div>
     </div>
