@@ -9,7 +9,7 @@
 	<target name="tabs.css.copy">
 		<loadfile
       property="tabs.css"
-      srcFile="${dita.plugin.fox.jason.tabs.css.dir}/resource/tabs.css"
+      srcFile="${dita.plugin.fox.jason.tabs.css.dir}/css/tabs.css"
     />
 		<echo
       append="true"
