@@ -122,4 +122,4 @@ To alter the CSS, amend the `resource/tabs.css` file which is copied over as par
 
 ## License
 
-[Apache 2.0](LICENSE) © 2021 Jason Fox
+[Apache 2.0](LICENSE) © 2021 - 2022 Jason Fox
