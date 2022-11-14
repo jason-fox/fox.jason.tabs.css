@@ -4,7 +4,7 @@
 	<description>
 		Expect that HTML displays multiple tabbed dialogs
 	</description>
-	<target description="" name="unit-test">
+	<target name="unit-test">
 		<exec-html5/>
 		<get-html-article from="topic.html"/>
 		<compare-output suffix=".html"/>
