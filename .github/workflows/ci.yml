@@ -38,6 +38,7 @@ jobs:
           prerequisites: |
             fox.jason.extend.css
             fox.jason.prismjs
+          setup-script: 'test/setup.sh'
         env:
           COVERALLS_TOKEN: ${{ secrets.COVERALLS_TOKEN }}
       - uses: actions/upload-artifact@v3
